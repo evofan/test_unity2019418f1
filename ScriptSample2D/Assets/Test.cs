@@ -41,6 +41,35 @@ public class Test : MonoBehaviour
         answer = 1 + 2;
         Debug.Log(answer);
 
+        answer = 3 - 4;
+        Debug.Log(answer);
+
+        answer = 5 * 6;
+        Debug.Log(answer);
+
+        answer = 8 / 4;
+        Debug.Log(answer);
+
+        // 変数同士の演算
+        int n1 = 8;
+        int n2 = 9;
+        answer = n1 + n2;
+        Debug.Log(answer);
+
+        // 便利な書き方1
+        int answer2 = 10;
+        answer2 += 5;
+        Debug.Log(answer2);
+
+        // 便利な書き方2
+        int answer3 = 10;
+        answer3 ++;
+        Debug.Log(answer3);
+
+        // 文字列の連結
+
+
+
 
     }
 
