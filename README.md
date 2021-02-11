@@ -11,5 +11,7 @@ Android Studio
 [https://developer.android.com/studio?hl=ja](https://developer.android.com/studio?hl=ja)  
 スマホでユニティを動かす環境構築  
 
-
+Unityよくあるエラー〜"All compiler errors have to be fixed before you can enter playmode!"と  
+“Please fix any compile errors and assign a valid script."〜  
+[http://gengoshori.hatenablog.com/entry/2018/01/05/235414](http://gengoshori.hatenablog.com/entry/2018/01/05/235414)  
 
