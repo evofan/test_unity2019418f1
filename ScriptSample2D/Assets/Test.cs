@@ -67,8 +67,21 @@ public class Test : MonoBehaviour
         Debug.Log(answer3);
 
         // 文字列の連結
+        string str1 = "happy";
+        string str2 = "birthday";
+        string message;
 
+        message = str1 + str2;
+        Debug.Log(message);
 
+        str1 += str2;
+        Debug.Log(str1);
+
+        // 文字列と数値の連結
+        string str3 = "happy ";
+        int num3 = 123;
+        string message3 = str3 + num3;
+        Debug.Log(message3);
 
 
     }
