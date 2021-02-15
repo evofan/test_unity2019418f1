@@ -63,7 +63,7 @@ public class Test : MonoBehaviour
 
         // 便利な書き方2
         int answer3 = 10;
-        answer3 ++;
+        answer3++;
         Debug.Log(answer3);
 
         // 文字列の連結
@@ -82,6 +82,13 @@ public class Test : MonoBehaviour
         int num3 = 123;
         string message3 = str3 + num3;
         Debug.Log(message3);
+
+        // 制御文
+        int hurbnum = 1;
+        if (hurbnum == 1)
+        {
+            Debug.Log("HPが50回復");
+        }
 
 
     }
