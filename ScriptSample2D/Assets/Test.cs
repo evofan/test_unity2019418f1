@@ -90,6 +90,90 @@ public class Test : MonoBehaviour
             Debug.Log("HPが50回復");
         }
 
+        // if else
+        int hp2 = 200;
+        if (hp2 >= 100)
+        {
+            Debug.Log("攻撃！");
+        }
+        else
+        {
+            Debug.Log("防御！");
+        }
+
+        // else if
+        int hp3 = 180;
+        if (hp3 <= 50)
+        {
+            Debug.Log("逃走2！");
+        }
+        else if (hp3 >= 200)
+        {
+            Debug.Log("攻撃2！");
+        }
+        else
+        {
+            Debug.Log("防御2！");
+        }
+
+        //  変数のスコープ
+        int x83 = 1;
+        if (x83 == 1)
+        {
+            int y83 = 2;
+            Debug.Log(x83);
+            Debug.Log(y83);
+        }
+        // Debug.Log(y83);//Assets\Test.cs(127,19): error CS0103: The name 'y83' does not exist in the current context
+
+        // for文、p84
+        for(int i = 0; i< 5; i++)
+        {
+            Debug.Log(i);
+        }
+
+        // 配列,p89
+        int[] points = new int[5];// 書き方
+
+        int[] num_ary = new int[5];
+        num_ary[0] = 74;
+        num_ary[1] = 86;
+        num_ary[2] = 12;
+        num_ary[3] = 90;
+        num_ary[4] = 53;
+
+        for (int i = 0; i < 5; i++)
+        {
+            Debug.Log(num_ary[i]);
+        }
+
+        Debug.Log("\n\n");
+
+        // 配列内の条件を満たす要素だけを抽出
+        int[] num_ary2 = { 83, 99, 52, 93, 25 };
+        for (int i = 0; i < num_ary2.Length; i++)
+        {
+            if (num_ary2[i] >= 90)
+            {
+                Debug.Log(num_ary2[i]);
+            }
+        }
+
+        // 平均値を求めるサンプル
+        int[] num_ary3 = { 83, 99, 52, 93, 15 };
+        int sum = 0;
+        for (int i = 0; i < num_ary3.Length; i++)
+        {
+            sum += num_ary3[i];
+        }
+        int average = sum / num_ary3.Length;
+        Debug.Log(average);//68
+        
+        // 小数点以下も正確に求める場合
+        float average2 = 1.0f * sum / num_ary3.Length;
+        Debug.Log(average2);//68.4
+
+
 
     }
 
