@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Test : MonoBehaviour
+public class Test : MonoBehaviour // MonoBehaviourクラスを継承
 {
     // Start is called before the first frame update
     void Start() // 最初に一回だけ実行
@@ -173,13 +173,108 @@ public class Test : MonoBehaviour
         float average2 = 1.0f * sum / num_ary3.Length;
         Debug.Log(average2);//68.4
 
+        // p95 2-7 メソッド
+        SayHello();
+
+        CallName("Judy");
+
+        int answerNum;
+        answerNum = AddNum(2, 4);
+        Debug.Log(answerNum); // 6
+
+        int answerNum2;
+        int num1 = 3;
+        int num2 = 5;
+        answerNum2 = AddNum(num1, num2);
+        Debug.Log(answerNum2); // 8
 
 
+        // p105 クラス
+        Player myPlayer = new Player();
+        myPlayer.Attack(); // 50のダメージを与えた！
+        myPlayer.Damage(30); // 30のダメージを受けた！
+
+        // p110
+        // クラス例、Vectorクラス、キャラクターを動かす事などによく使う
+        // 3Dゲームでは、空間上のどこのオブジェクトを置くのか、どこに移動するのか、float型のx,y,z、3つの値を扱う
+        // そのためにVector3クラス（正確には構造体、クラスより制限があるが高速に動作する）が用意されている
+        // 2D用には、float型のx,yの値を持つVector2クラスが用意されている
+
+        // Vector3クラスを疑似的に書くと以下のようになる
+        /*
+        class Vector3
+        {
+            public float x;
+            public float y;
+            public float z;
+        }
+        */
+
+        // Vectorクラスを座標として使う場合、x=3, y=5なら3,5の位置にオブジェクトを配置
+        // ベクトルとして使うなら、現在の位置からx方向に3、y方向に5進む事を意味する
+
+        // Vectorクラスの使用例
+        Vector2 playerPos = new Vector2(3.0f, 4.0f);
+        playerPos.x += 8.0f;
+        playerPos.y += 6.0f;
+        Debug.Log(playerPos);// (11.0, 10.0)
+
+        // Vector2同士の減算
+        Vector2 startPos = new Vector2(2.0f, 1.0f);
+        Vector2 endPos = new Vector2(8.0f, 5.0f);
+        Vector2 dir = endPos - startPos;
+        Debug.Log(dir);// (6.0, 4.0)
+
+        float len = dir.magnitude; // 2点間の距離
+        Debug.Log(len);// 7.211102
+
+
+
+    }
+
+    // 引数も返り値も無いメソッド
+    void SayHello()
+    {
+        Debug.Log("こんにちは");
+    }
+
+    // 引数のあるメソッド
+    void CallName(string name)
+    {
+        Debug.Log("こんにちは、" + name);
+    }
+
+    // 引数と返り値のあるメソッド
+    int AddNum(int a, int b)
+    {
+        int c = a + b;
+        return c;
     }
 
     // Update is called once per frame
     void Update() // エンターフレームと同じ、60fpsだが、実際はTime.deltaTime毎に実行
     {
         
+    }
+}
+
+// p105 クラス
+public class Player
+{
+    private int hp = 100; // private...同じクラスからのみアクセス可能、protected...同じクラスとその子クラスからのみアクセス可能
+    private int power = 50;
+
+    public void Attack() // public...全てのクラスからアクセス可能
+    {
+        int power = 100;
+        Debug.Log(this.power + "のダメージを与えた！");　// thisを付けることでローカルでなくクラスのメンバー変数を使う
+
+    }
+
+    public void Damage(int damage)
+    {
+        this.hp -= damage;
+        Debug.Log(damage + "のダメージを受けた！"); // Debug.Log()は静的メソッドなので、インスタンス作成無しにそのまま呼び出せる
+
     }
 }
